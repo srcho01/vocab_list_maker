@@ -116,6 +116,52 @@
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QCheckBox" name="check_foreign">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>171</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>외국어</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="check_korean">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>130</y>
+      <width>171</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>한국어</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QPushButton" name="drag_and_drop">
    <property name="geometry">
@@ -291,52 +337,6 @@ QPushButton:hover{
      <bool>true</bool>
     </property>
    </widget>
-  </widget>
-  <widget class="QCheckBox" name="check_korean">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>170</y>
-     <width>171</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>한국어</string>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QCheckBox" name="check_foreign">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>170</y>
-     <width>171</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>12</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>외국어</string>
-   </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
   </widget>
  </widget>
  <resources/>
