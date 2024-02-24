@@ -10,7 +10,7 @@ ex) word.txt
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Grape 포도
 
 2. distribute 폴더 전체를 다운로드 후 압축 해제
-3. distribute 내 Word main.exe 실행
+3. distribute 내 main.exe 실행
 4. Drag And Drop 창에 준비한 텍스트 파일을 끌어오거나 창을 클릭하여 파일 탐색 (텍스트 파일만 가능)
 5. 잘못 가져온 파일은 좌클릭 후 Delete
 6. Make 클릭 후 파일 저장할 경로 설정
