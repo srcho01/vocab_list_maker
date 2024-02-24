@@ -69,12 +69,12 @@ def make_image(path, fname, lang, answer, number, w1, w2):
     img = Image.new("RGB", (width, height), (255, 255, 255))
     draw = ImageDraw.Draw(img)
     
-    y_position = 10
+    y_position = 25
     for i, word in enumerate(w1):
         if number:
-            draw.text((10, y_position), f"{i+1}. {word}", fill=(0, 0, 0), font=font)
+            draw.text((25, y_position), f"{i+1}. {word}", fill=(0, 0, 0), font=font)
         else:
-            draw.text((10, y_position), word, fill=(0, 0, 0), font=font)
+            draw.text((25, y_position), word, fill=(0, 0, 0), font=font)
         y_position += font_size + 8  # 단어 간격 조절
     
     output = f"{path}/{fname}_{lang}_test.jpg"
@@ -84,12 +84,12 @@ def make_image(path, fname, lang, answer, number, w1, w2):
         img = Image.new("RGB", (width, height), (255, 255, 255))
         draw = ImageDraw.Draw(img)
         
-        y_position = 10
+        y_position = 25
         for i, word in enumerate(zip(w1, w2)):
             if number:
-                draw.text((10, y_position), f"{i+1}. {word[0]} {word[1]}", fill=(0, 0, 0), font=font)
+                draw.text((25, y_position), f"{i+1}. {word[0]} {word[1]}", fill=(0, 0, 0), font=font)
             else:
-                draw.text((10, y_position), f"{word[0]} {word[1]}", fill=(0, 0, 0), font=font)
+                draw.text((25, y_position), f"{word[0]} {word[1]}", fill=(0, 0, 0), font=font)
             y_position += font_size + 8  # 단어 간격 조절
         
         output = f"{path}/{fname}_{lang}_answer.jpg"
