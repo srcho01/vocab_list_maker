@@ -10,6 +10,7 @@ class Window(QMainWindow, form_class) :
     def __init__(self) :
         super().__init__()
         self.setupUi(self)
+        self.setWindowTitle("Vocabulary List Maker")
         
         ### handler ###  
         # file input
