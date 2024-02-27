@@ -1,5 +1,6 @@
 import random
 from PIL import Image, ImageDraw, ImageFont
+import os
 
 def make_file(files, save_path, format, is_numbering, is_shuffle, is_foreign, is_korean, is_answer):
     for file in files:
@@ -41,18 +42,29 @@ def _make_file(lang, words, path, format, fname, number, shuffle, answer):
             make_text(path, fname, 'korean', answer, number, korean, foreign)
         elif format == 'jpg':
             make_image(path, fname, 'korean', answer, number, korean, foreign)
-        
+
+def make_file_name(path, fname, ext):
+    output = f"{path}/{fname}.{ext}"
+    
+    cnt = 1
+    while os.path.exists(output):
+        output = f"{path}/{fname} ({cnt}).{ext}"
+        cnt += 1
+    
+    return output 
+
 def make_text(path, fname, lang, answer, number, w1, w2):
-    output = f"{path}/{fname}_{lang}_test.txt"
+    output = make_file_name(path, f"{fname}_{lang}_test", "txt")
     with open(output, 'w', encoding='utf-8') as f:
         for i, word in enumerate(w1):
             if number:
                 f.write(f"{i+1}. {word}\n")
             else:
-                f.write("word\n")
+                f.write(f"{word}\n")
     
     if answer:
-        output = f"{path}/{fname}_{lang}_answer.txt"
+        output = make_file_name(path, f"{fname}_{lang}_answer", "txt")
+        
         with open(output, 'w', encoding='utf-8') as f:
             for i, word in enumerate(zip(w1, w2)):
                 if number:
@@ -77,7 +89,7 @@ def make_image(path, fname, lang, answer, number, w1, w2):
             draw.text((25, y_position), word, fill=(0, 0, 0), font=font)
         y_position += font_size + 8  # 단어 간격 조절
     
-    output = f"{path}/{fname}_{lang}_test.jpg"
+    output = make_file_name(path, f"{fname}_{lang}_test", "jpg")
     img.save(output)
     
     if answer:
@@ -92,5 +104,5 @@ def make_image(path, fname, lang, answer, number, w1, w2):
                 draw.text((25, y_position), f"{word[0]} {word[1]}", fill=(0, 0, 0), font=font)
             y_position += font_size + 8  # 단어 간격 조절
         
-        output = f"{path}/{fname}_{lang}_answer.jpg"
+        output = make_file_name(path, f"{fname}_{lang}_answer", "jpg")
         img.save(output)
